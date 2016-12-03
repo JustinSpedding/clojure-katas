@@ -6,4 +6,8 @@
   by making use of the approximation sin x  x if x is sufficiently small,
   and the trigonometric identity:
     sin(r) = 3sin(r/3) -. 4sin^3(r/3)"
-  [angle])
+  [angle]
+  (if (<= (Math/abs angle) 0.1)
+    angle
+    (let [equ #(- (* 3 %) (* 4 % % %))]
+      (equ (sine (/ angle 3.0))))))
