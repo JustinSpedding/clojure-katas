@@ -12,4 +12,7 @@
    example:
    If a box contains twenty-one coloured discs, composed of 15 blue discs and 6 red discs,
    and 2 discs were taken at random, it can be seen that the probability of taking 2 blue discs, P(BB) = (15/21)×(14/20) = 1/2."
-  [p, m, n])
+  [p, m, n]
+  (if (zero? n)
+    1.0
+    (* (/ m p) (prob (dec p) (dec m) (dec n)))))
